@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.12.3-slim
 
 ENV PYTHONUNBUFFERED=1
 
@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 RUN python -m pip install --no-cache-dir --upgrade pip \
-    && python -m pip install --no-cache-dir "mineru[core]>=3.0.0"
+    && python -m pip install --no-cache-dir "mineru[core]==3.0.9"
 
 ENV MINERU_MODEL_SOURCE=local
 
